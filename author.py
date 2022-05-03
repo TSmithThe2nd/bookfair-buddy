@@ -34,5 +34,6 @@ WHERE id = 10;"""
 
 
 #delete
-delete_author=f"""DELETE FROM author
+delete_author=f"""
+DELETE FROM author
 WHERE id = '{authorID}';"""

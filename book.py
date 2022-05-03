@@ -1,14 +1,11 @@
 # imports
-from pythonCrudFunctions import create_db_connection, execute_query
+
 
 #varibles
-title="manning the mutt"
-authorId=3
-bookId=25
-genre="readers"
-
-pw="Lacyk#18"
-connection = create_db_connection("localhost", "root",pw, "bookfairbuddy")
+title= None
+authorId= None
+bookId= None
+genre= None
 
 #create new book
 new_book=f"""
