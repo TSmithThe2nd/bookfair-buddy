@@ -20,11 +20,7 @@ SELECT *
 FROM student;
 """
 
-show_students_in_student=f"""
-SELECT first_name, last_name
-FROM student
-WHERE student_id="{studentId}"
-"""
+
 
 show_student_books=f"""
 SELECT title
