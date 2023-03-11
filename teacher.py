@@ -2,7 +2,7 @@
 
 
 #varibles
-teacherId=none
+teacherId=None
 first_name=None
 last_name=None
 grade_level=None
@@ -47,7 +47,7 @@ INSERT INTO teacher_books VALUES
 
 #delete
 delete_teacher=f"""DELETE FROM teacher
-WHERE id = '{teacherID}';"""
+WHERE id = '{teacherId}';"""
 
 remove_book_from_teacher=f"""
 DELETE FROM teacher_books

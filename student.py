@@ -11,7 +11,7 @@ bookId=None
 #create new student
 new_student= f"""
 INSERT INTO student VALUES
-('{studentId}','{first_name}','{last_name}','{grade_level}','{pr)
+('{studentId}','{first_name}','{last_name}','{grade_level}','{bookId})'
 """
 
 #read student
@@ -41,7 +41,7 @@ INSERT INTO student_books VALUES
 
 #delete
 delete_student=f"""DELETE FROM student
-WHERE id = '{studentID}';"""
+WHERE id = '{studentId}';"""
 
 remove_book_from_student=f"""
 DELETE FROM student_books
