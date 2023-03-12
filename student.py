@@ -11,7 +11,7 @@ bookId=None
 #create new student
 new_student= f"""
 INSERT INTO student VALUES
-('{studentId}','{first_name}','{last_name}','{grade_level}','{bookId})'
+('0','{studentId}','{first_name}','{last_name}','{grade_level}','{bookId})'
 """
 
 #read student

@@ -10,7 +10,7 @@ genre= None
 #create new book
 new_book=f"""
 INSERT INTO book VALUES
-('{bookId}','{genre}','{title}','{authorId}')
+( '0','{title}','{authorId}')
 """
 
 

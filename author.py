@@ -11,7 +11,7 @@ authorID=None
 #create new author
 new_author= f"""
 INSERT INTO author VALUES
-(10, '{first_name}','{last_name}')
+('0', '{first_name}','{last_name}')
 """
 
 

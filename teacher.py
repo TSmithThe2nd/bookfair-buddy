@@ -12,7 +12,7 @@ bookId=None
 #create new teacher
 new_teacher= f"""
 INSERT INTO teacher VALUES
-('{teacherId}','{first_name}','{last_name}','{grade_level}','{prefix}')
+('0','{teacherId}','{first_name}','{last_name}','{grade_level}','{prefix}')
 """
 
 #read teacher
