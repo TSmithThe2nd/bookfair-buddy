@@ -11,17 +11,29 @@ bookId = None
 
 
 def student_hook(f_name, l_name, g_level, t_id):
-    new_student
     student.first_name = f_name
     student.last_name = l_name
     student.grade_level = g_level
     student.teacher_id = t_id
 
 # create new student
-new_student= f"""
-INSERT INTO student VALUES
-('0',,'{first_name}','{last_name}','{grade_level}','{teacher_id})'
-"""
+# new_student= f"""
+# INSERT INTO student VALUES
+# ('0',,'{student.first_name}','{student.last_name}','{student.grade_level}','{student.teacher_id})'
+# """
+# new create new student
+def createNewStudent(firstName, lastName, gradeLevel, teacherId):
+    try:
+        student.first_name=firstName
+        student.last_name=lastName
+        student.grade_level=gradeLevel
+        student.teacher_id=teacherId
+    except:
+        print("Ooops")
+    print(f"""Insert Into student values
+(0,'{student.first_name}','{student.last_name}','{student.grade_level}','{student.teacher_id})""")
+    return f"""Insert Into student values
+(0, '{student.first_name}','{student.last_name}','{student.grade_level}',{student.teacher_id})"""
 
 # read student
 show_all_students = """
