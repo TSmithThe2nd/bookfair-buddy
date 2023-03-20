@@ -1,39 +1,20 @@
 # import
 import student as student
 
-# varibles
-studentId = None
-first_name = None
-last_name = None
-grade_level = None
-teacher_id = None
-bookId = None
 
-
-def student_hook(f_name, l_name, g_level, t_id):
-    student.first_name = f_name
-    student.last_name = l_name
-    student.grade_level = g_level
-    student.teacher_id = t_id
-
-# create new student
-# new_student= f"""
-# INSERT INTO student VALUES
-# ('0',,'{student.first_name}','{student.last_name}','{student.grade_level}','{student.teacher_id})'
-# """
 # new create new student
-def createNewStudent(firstName, lastName, gradeLevel, teacherId):
-    try:
-        student.first_name=firstName
-        student.last_name=lastName
-        student.grade_level=gradeLevel
-        student.teacher_id=teacherId
-    except:
-        print("Ooops")
-    print(f"""Insert Into student values
-(0,'{student.first_name}','{student.last_name}','{student.grade_level}','{student.teacher_id})""")
+def create_student(first_name, last_name, grade_level, teacher_id):
     return f"""Insert Into student values
-(0, '{student.first_name}','{student.last_name}','{student.grade_level}',{student.teacher_id})"""
+(0, '{first_name}','{last_name}','{grade_level}',{teacher_id})"""
+
+
+# update student
+def update_student(first_name, last_name, grade_level, student_id):
+    return f"""
+UPDATE student
+SET first_name= '{first_name}', last_name= '{last_name}', grade_level='{grade_level}'
+WHERE id = '{student_id}';"""
+
 
 # read student
 show_all_students = """
@@ -41,28 +22,30 @@ SELECT *
 FROM student;
 """
 
-show_student_books = f"""
+
+def show_student_books(student_id):
+    return f"""
 SELECT title
 FROM student_books
-WHERE student_id="{studentId}"
+WHERE student_id="{student_id}"
 """
 
-# update student
-update_student = f"""
-UPDATE student
-SET first_name= '{first_name}', last_name= '{last_name}', grade_level='{grade_level}'
-WHERE id = '{studentId}';"""
-
-add_book_to_student = f"""
+# todo join statements will be needed to retrieve data related to this function.
+def add_book_to_student(student_id, book_id):
+    return f"""
 INSERT INTO student_books VALUES
-('{studentId}','{bookId}')
+('{student_id}','{book_id}')
 """
 
+# TODO join statement needed here
 # delete
-delete_student = f"""DELETE FROM student
-WHERE id = '{studentId}';"""
+def delete_student(student_id):
+    return f"""DELETE FROM student
+WHERE id = '{student_id}';"""
 
-remove_book_from_student = f"""
+# TODO this will need to be made into an join statement to be of any use
+def remove_book_from_student(book_id, student_id):
+    return f"""
 DELETE FROM student_books
-WHERE book_id='{bookId}' and student_id='{studentId}'
+WHERE book_id='{book_id}' and student_id='{student_id}'
 """
