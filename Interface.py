@@ -42,7 +42,9 @@ class CreateStudent(GridLayout):
         name = self.name.text
         last = self.lastName.text
         grade_level = self.gradeLevel.text
-        student.create_student(name, last, grade_level, 2)
+        test_student=student.create_student(name, last, grade_level, 2)
+        connection = pythonCrudFunctions.create_db_connection()
+        pythonCrudFunctions.execute_query(connection,test_student)
 
 
 
